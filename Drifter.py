@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Oct  6 16:34:20 2016
-caculate drifter v and v
+calculate drifter v and v
 @author: xiaojian
 """
 
