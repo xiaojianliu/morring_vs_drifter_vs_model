@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jan 31 15:50:20 2017
-
-@author: bling
+draw a picture about 'mooring_vs_drifter_vs_model'
+@author: xiaojian
 """
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,7 +20,6 @@ plt.plot(udr,'r-',label='drifter')
 plt.plot(um,'b-',label='model')
 plt.ylabel('m/s')
 plt.xlabel('hours')
-#plt.ylim('2017, 1, 27, 0, 0','2017, 1, 31, 17, 0')
 plt.legend(loc='best')
 plt.savefig('u',dpi=700)
 plt.figure()
