@@ -73,7 +73,7 @@ layer=0
 u,v=get_u_v(time,lon,lat,layer)
 print u,v
 ''' 
-data = np.genfromtxt('1.csv',dtype=None,names=['s','time','c','sudu','e','jiao','g','tem','i','lon','lat','depth'],delimiter=',',skip_header=2)  
+data = np.genfromtxt('B01.csv',dtype=None,names=['s','time','c','sudu','e','jiao','g','tem','i','lon','lat','depth'],delimiter=',',skip_header=2)  
 u=[]
 v=[]
     
