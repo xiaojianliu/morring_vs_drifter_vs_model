@@ -23,19 +23,13 @@ vv=[]
 lon11=[]
 lat11=[]
 ttii=[]
-plt.figure()# is this needed? Are you making a Figure?
 for a in np.arange(9): # You need to explain these hardcodes?  Why "9"
-    #print a
-    iiiii=a # what is this "iiiii" for?
     drifters = np.genfromtxt(F+str(a)+'.csv',dtype=None,names=['ids','time','lon','lat','depth'],delimiter=',',skip_header=1)  
     try:
         # What is "day" since you do not use it after this line and explain what this line does?
         day=(datetime.strptime(drifters['time'][-1], '%Y-%m-%d'+'T'+'%H:%M:%SZ')-datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')).days
     except:
         continue
-    
-    
-    aa=a # what is this "aa" for?
     d_time=datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')       
     start_times=d_time # Why not say start_times=datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')   
     rawtime=[]
