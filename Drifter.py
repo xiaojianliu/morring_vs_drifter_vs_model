@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Oct  6 16:34:20 2016
-
-@author: hxu
+caculate drifter v and v
+@author: xiaojian
 """
 
 import datetime as dt
