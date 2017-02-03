@@ -23,15 +23,9 @@ vv=[]
 lon11=[]
 lat11=[]
 ttii=[]
-for a in np.arange(9): # You need to explain these hardcodes?  Why "9"
+for a in np.arange(9): # 9 segments
     drifters = np.genfromtxt(F+str(a)+'.csv',dtype=None,names=['ids','time','lon','lat','depth'],delimiter=',',skip_header=1)  
-    try:
-        # What is "day" since you do not use it after this line and explain what this line does?
-        day=(datetime.strptime(drifters['time'][-1], '%Y-%m-%d'+'T'+'%H:%M:%SZ')-datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')).days
-    except:
-        continue
-    d_time=datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')       
-    start_times=d_time # Why not say start_times=datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')   
+    start_times=datetime.strptime(drifters['time'][0], '%Y-%m-%d'+'T'+'%H:%M:%SZ')       
     rawtime=[]
     for a in np.arange(len(drifters['time'])):
         print drifters['time'][a]
@@ -39,7 +33,7 @@ for a in np.arange(9): # You need to explain these hardcodes?  Why "9"
     print rawtime
     t1=np.ceil(np.min(rawtime)*24.)/24.
     t2=np.floor(np.max(rawtime)*24.)/24.
-    tdh=np.arange(t1,t2,1./(24*6)) # explain what you are doing here
+    tdh=np.arange(t1,t2,1./(24*6)) #interpolation
     print tdh
     for m in np.arange(len(tdh)):
         print num2date(tdh[m])
